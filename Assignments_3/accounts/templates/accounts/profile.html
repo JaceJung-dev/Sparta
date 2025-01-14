@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>프로필 페이지</h1>
+    <div class="profile_image">
+        {% if image %}
+            <img src="{{ image.url }}">
+        {% else %}
+            <p>이미지 없음.</p>
+        {% endif %}
+    </div>
+
+    <div class="profile_info">
+        <p><strong>사용자 이름: {{ username }}</p>
+        <p><strong>이름: {{ first_name }} {{ last_name }}</p>
+        <p><strong>이메일: {{ email }}</p>
+        <p><strong>소개: {{ introduction|default:"소개가 없습니다." }}</p>
+    </div>
+
+{% endblock content %}
