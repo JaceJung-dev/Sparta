@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Post Update Page</h1>
+        <form action="{% url 'post:update' post.pk %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">수정</button>
+    </form>
+{% endblock content %}
